@@ -3,7 +3,8 @@ ARCH := $(shell uname -m | sed 's/arm64/aarch64/')
 OS := $(shell uname -s | sed 's/Darwin/osx/')
 OS_ARCH := $(ARCH)-$(OS)
 LINUX_HC_PATH := .stack-work/dist/x86_64-linux-tinfo6/ghc-$(GHC_VERSION)/build
-RUSTLIB := rust_interop
+RUSTLIB := greetings 
+WORKING_DIR := $(shell pwd)
 
 prepare-rust-interop:
 	cd ./greetings/ && \
@@ -17,3 +18,4 @@ prepare-rust-interop:
 	cp ./target/release/lib$(RUSTLIB).so .stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/libC$(RUSTLIB).so || true && \
 	cp ./target/release/lib$(RUSTLIB).dylib .stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/libC$(RUSTLIB).dylib || true && \
 	cp ./target/release/lib$(RUSTLIB).dylib .stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/libC$(RUSTLIB)-ghc$(GHC_VERSION).dylib  || true
+	@echo WORKING_DIR
