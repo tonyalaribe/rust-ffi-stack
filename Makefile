@@ -1,4 +1,4 @@
-GHC_VERSION := 9.8.1
+GHC_VERSION := 9.6.4
 ARCH := $(shell uname -m | sed 's/arm64/aarch64/')
 OS := $(shell uname -s | sed 's/Darwin/osx/')
 OS_ARCH := $(ARCH)-$(OS)
