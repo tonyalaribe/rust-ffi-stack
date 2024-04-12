@@ -3,7 +3,7 @@ ARCH := $(shell uname -m | sed 's/arm64/aarch64/')
 OS := $(shell uname -s | sed 's/Darwin/osx/')
 OS_ARCH := $(ARCH)-$(OS)
 LINUX_HC_PATH := .stack-work/dist/x86_64-linux-tinfo6/ghc-$(GHC_VERSION)/build
-RUSTLIB := greetings 
+RUSTLIB := greetings
 WORKING_DIR := $(shell pwd)
 
 prepare-rust-interop:
