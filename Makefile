@@ -8,8 +8,8 @@ prepare-rust-interop:
 	cd ./greetings/ && \
 	cargo build --release && \
 	mkdir -p ./.stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/ && \
-	mkdir -p ./.stack-work/dist/x86_64-linux-tinfo6/ghc-9.8.1/build/ && \
-	cp ./target/release/libgreetings.a $(LINUX_HC_PATH)/libCgreetings.a \
+	mkdir -p $(LINUX_HC_PATH) && \
+	cp ./target/release/libgreetings.a $(LINUX_HC_PATH)/libCgreetings.a && \
 	cp ./target/release/libgreetings.so $(LINUX_HC_PATH)/libCgreetings.so || true && \
 	cp ./target/release/libgreetings.a .stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/libCgreetings.a || true && \
 	cp ./target/release/libgreetings.so .stack-work/dist/$(OS_ARCH)/ghc-$(GHC_VERSION)/build/libCgreetings.so || true && \
